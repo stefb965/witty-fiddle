@@ -1,0 +1,31 @@
+{
+  "name": "witty-fiddle",
+  "version": "1.0.0",
+  "homepage": "https://wit-ai.github.io/witty-fiddle",
+  "devDependencies": {
+    "react-scripts": "0.4.1"
+  },
+  "author": "wit",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "codemirror": "^5.17.0",
+    "firebase": "^3.3.0",
+    "isomorphic-fetch": "^2.2.1",
+    "node-wit": "4.2.0",
+    "react": "^15.3.0",
+    "react-bootstrap": "^0.30.7",
+    "react-code-mirror": "^3.1.0",
+    "react-dom": "^15.3.0",
+    "url-query": "^1.0.3",
+    "uuid": "^3.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/react-scripts/config/eslint.js"
+  }
+}

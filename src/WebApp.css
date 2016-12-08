@@ -1,0 +1,463 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+.tooltip { top: 0; }
+
+.WebApp-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-width: 1280px;
+}
+
+.WebApp-error-panel-root {
+  background: darkorange;
+  display: flex;
+  color: white;
+  justify-content: center;
+  padding: 10px;
+}
+
+.WebApp-error-panel-title {
+  margin: 0;
+}
+
+.WebApp-error-panel-item {
+  font-weight: 500;
+  padding: 5px;
+}
+
+.WebApp-button {
+  background: white;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 5px 15px;
+  font-weight: 500;
+  color: blue;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.WebApp-button:hover, .WebApp-button:focus {
+  box-shadow: 0 0 2px 1px lightgrey;
+}
+
+.WebApp-button[disabled] {
+  opacity: 0.5;
+}
+
+.WebApp-clone-button-changed {
+  box-shadow: 0 0 1px 2px lightgreen;
+  color: green;
+}
+
+.WebApp-see-stories-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  color: blue;
+}
+
+.WebApp-token-picker-empty .WebApp-token-picker-input {
+  border-color: red;
+}
+
+.WebApp-token-picker-root {
+  display: flex;
+}
+
+.WebApp-token-picker-input {
+  margin-right: 20px;
+  min-width: 245px;
+  color: darkblue;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px;
+}
+
+.WebApp-token-picker-input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.WebApp-header {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.WebApp-header-main {
+  display: flex;
+  flex: 1
+}
+
+.WebApp-header-title {
+  font-weight: 500;
+  margin: 0 20px 0 0;
+}
+
+.WebApp-header-subtitle {
+  margin: 0 0 20px 0;
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.WebApp-header-link {
+  text-decoration: none;
+}
+
+.WebApp-header-side {
+  display: flex;
+  align-items: center;
+}
+
+.WebApp-versions-root {
+  max-width: 500px;
+  overflow-x: auto;
+  margin: 0 10px;
+}
+
+.WebApp-versions-list-item {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.WebApp-body {
+  display: flex;
+  flex: 1;
+}
+
+.WebApp-sidebar-root {
+  min-width: 120px;
+  max-width: 190px;
+  border-right: 1px solid lightgrey;
+}
+
+.WebApp-sidebar-input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #f8f8f8;
+  color: blue;
+}
+
+.WebApp-sidebar-gist-link {
+  padding: 10px;
+  font-size: 11px;
+  border-bottom: 1px solid #f8f8f8;
+  display: block;
+}
+
+.WebApp-sidebar-input:focus {
+  border-bottom: 1px solid blue;
+}
+
+.WebApp-sandbox-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;;
+  background-color: #f8f8f8;
+}
+
+.WebApp-sandbox-wrapper {
+  width: 800px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+.WebApp-sandbox-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.WebApp-sandbox-context {
+  margin: 20px 15px;
+  height: 100px;
+}
+
+.WebApp-action-editor-root {
+  max-width: 650px;
+  min-width: 300px;
+  background-color: #f9f9f9;
+  border-left: 1px solid lightgrey;
+  display: flex;
+  flex-direction: column;
+}
+.WebApp-action-editor-title {
+  border-bottom: 1px solid lightgrey;
+}
+.WebApp-action-editor-title .WebApp-container-title {
+  margin: 10px 0;
+}
+.WebApp-code-status-root {
+  padding: 5px;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center
+}
+
+.WebApp-code-status-sign {
+  border-radius: 100%;
+  min-width: 20px;
+  min-height: 20px;
+  background: lightgreen;
+  border: 1px solid lightgrey;
+  margin-right: 5px;
+}
+
+.WebApp-code-status-message {
+  font-size: 13px;
+  color: green;
+  overflow-x: auto;
+}
+
+.WebApp-code-status-error .WebApp-code-status-sign {
+  background: red;
+}
+
+.WebApp-code-status-error .WebApp-code-status-message {
+  color: red;
+}
+
+.WebApp-action-editor-code-mirror {
+  flex: 1;
+  overflow: auto;
+}
+
+.WebApp-action-editor-code-mirror .CodeMirror {
+  height: auto;
+}
+
+.WebApp-action-editor-code-mirror .cm-s-solarized.CodeMirror {
+  box-shadow: none;
+}
+
+.WebApp-container-root {
+  width: 50%;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.WebApp-container-title {
+  font-weight: normal;
+  text-align: center
+}
+
+.WebApp-arrow-right-to-left {
+  background: url('./arrow-right-to-left.svg') right center no-repeat;
+}
+
+.WebApp-arrow-left-to-right {
+  background: url('./arrow-left-to-right.svg') left center no-repeat;
+}
+
+.WebApp-chat-root,
+.WebApp-log-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 1px solid lightgrey;
+  margin: 0 15px;
+  background: white;
+}
+
+.WebApp-chat-list {
+  box-sizing: border-box;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.WebApp-payload-root {
+  font-family: monospace;
+}
+
+.WebApp-payload-title {
+  padding: 5px;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.WebApp-payload-body {
+  max-height: 100px;
+  overflow: auto;
+}
+
+.WebApp-log-payload {
+  margin-bottom: 10px;
+}
+
+.WebApp-log-payload .WebApp-payload-title {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.WebApp-log-payload .WebApp-payload-body {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.WebApp-bot-payload .WebApp-payload-title {
+  background: #208bf5;
+  color: white;
+}
+
+.WebApp-bot-payload .WebApp-payload-body {
+  border: 1px solid #208bf5;
+}
+
+
+.WebApp-bubble {
+  border-radius: 20px;
+  padding: 10px;
+  margin: 5px;
+  max-width: 70%;
+  display: inline-block;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.WebApp-user-bubble .WebApp-bubble {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.WebApp-bot-bubble .WebApp-bubble {
+  background: #208bf5;
+  color: white;
+}
+
+.WebApp-bot-bubble {
+  text-align: right;
+}
+
+.WebApp-empty-message {
+  box-sizing: border-box;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: lightgrey;
+}
+
+.WebApp-chat-composer {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-top: 1px solid lightgrey;
+  padding: 10px 5px;
+  outline: none;
+  font-size: 15px;
+}
+
+.WebApp-chat-composer-info {
+  border-top: 1px solid lightgrey;
+  color: grey;
+  font-size: 13px;
+  padding: 5px;
+  background: #f9f8f8;
+}
+
+.WebApp-log-root {
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.WebApp-log-break {
+  font-family: monospace;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.WebApp-log-item {
+  font-family: monospace;
+  margin-bottom: 10px;
+}
+
+.WebApp-log-comment {
+  color: grey;
+}
+
+.WebApp-log-comment {
+  margin-bottom: 10px;
+}
+
+.WebApp-log-value {
+  color: blue;
+}
+
+.WebApp-deploy-root {
+  background: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.WebApp-close-deploy-button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.WebApp-deploy-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.WebApp-loading-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+  background-color: #333;
+
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
