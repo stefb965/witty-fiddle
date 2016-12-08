@@ -24,7 +24,7 @@ D) **The Wit App**: The separate Wit app, which tells the node server what to do
 
 ### 1. Create Your Wit App
 
-You can use [Wit.ai](https://wit.ai) to manage how your bot understands what your user sends you, and figures out how to respond. Check out the [weather bot stories](https://wit.ai/stopa-staging/witty-weather).
+You can use [Wit.ai](https://wit.ai) to manage how your bot understands what your user sends you, and figures out how to respond. Check out the [weather bot stories](https://wit.ai/stopa-staging/WittyWeather).
 
 ### 2. Connect Your App in WittyFiddle
 
