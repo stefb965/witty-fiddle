@@ -770,6 +770,33 @@ export default class WebApp extends React.Component {
     this._k = uuid.v4();
   }
   componentDidMount() {
+    window.fbAsyncInit = this._init;
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  }
+  componentDidUpdate(_, prevState) {
+    const codeChanged = prevState.code !== this.state.code;
+    const tokenChanged = prevState.token !== this.state.token;
+    if (codeChanged) {
+      this._checkCode();
+    }
+    if (codeChanged || tokenChanged) {
+      this._transferToDeploy();
+    }
+  }
+  _init = () => {
+    window.FB.init({
+      appId      : '338842666497038',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+    window.FB.AppEvents.logPageView();
+
     const q = window.location.search;
     const id = readId(q) || DEFAULT_ID;
     window.history.replaceState('', '', urlFor(id));
@@ -798,16 +825,6 @@ export default class WebApp extends React.Component {
       if (code !== originalCode) {
         return 'Are you sure? Your changes may not be saved';
       };
-    }
-  }
-  componentDidUpdate(_, prevState) {
-    const codeChanged = prevState.code !== this.state.code;
-    const tokenChanged = prevState.token !== this.state.token;
-    if (codeChanged) {
-      this._checkCode();
-    }
-    if (codeChanged || tokenChanged) {
-      this._transferToDeploy();
     }
   }
   _transferToDeploy() {
