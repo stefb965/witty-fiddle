@@ -868,6 +868,19 @@ export default class WebApp extends React.Component {
               </div>
             : null
         }
+        <div className="WebApp-notice-root">
+          <h4 className="WebApp-notice-text">
+            Stories is deprecated and will shut down on February 1, 2018.
+            Learn more about why and how to migrate
+            {' '}
+            <a
+              href="https://wit.ai/blog/2017/07/27/sunsetting-stories"
+              target="blank">
+              here
+            </a>
+            .
+          </h4>
+        </div>
         <div className="WebApp-header">
           <div className="WebApp-header-main">
             <h1 className="WebApp-header-title">wittyfiddle</h1>

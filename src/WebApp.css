@@ -17,6 +17,18 @@ body {
   min-width: 1280px;
 }
 
+.WebApp-notice-root {
+  background: #FFF9EB;
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.WebApp-notice-text {
+  background: #FFF9EB;
+  margin: 0;
+  text-align: center;
+}
+
 .WebApp-error-panel-root {
   background: darkorange;
   display: flex;
